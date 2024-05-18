@@ -10,7 +10,7 @@ if [ "$BRANCH" == "dev" ]; then
     docker build -t $IMAGENAME .
     echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u  $DOCKERHUB_CREDENTIALS_USR --password-stdin
     docker tag reactapp sridharsaravana/dev
-    docker push sridharsaravana/dev:reactapp
+    docker push sridharsaravana/dev:latest
     docker logout
 
 
