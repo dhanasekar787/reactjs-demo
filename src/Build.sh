@@ -6,4 +6,4 @@ IMAGENAME="reactapp"
  docker build -t $IMAGENAME .
 
  #Tag the image
- docker tag $IMAGENAME sridharsaravana/$IMAGENAME
+ docker tag $IMAGENAME dhanadev/$IMAGENAME
