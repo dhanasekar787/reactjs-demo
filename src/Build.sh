@@ -1,9 +1,9 @@
 #!/bin/bash
 #Image name
-IMAGENAME="reactapp"
+Docker_Image="reactapp"
 
 #Build the image
- docker build -t $IMAGENAME .
+ docker build -t $Docker_Image .
 
  #Tag the image
- docker tag $IMAGENAME sridharsaravana/$IMAGENAME
+ docker tag $Docker_Image dhanadev/$Docker_Image
