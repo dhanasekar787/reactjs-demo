@@ -1,0 +1,31 @@
+pipeline{
+    agent any 
+    
+    stages{
+        stage('checkscm'){
+          steps{
+            checkout scmGit(branches: [[name: 'origin/dev']], extensions: [], userRemoteConfigs: [[credentialsId: 'Github_id', url: 'https://github.com/dhanasekar787/reactjs-demo.git']])
+          }
+    
+        }
+        
+        stage('build'){
+          steps{
+              echo "building the application"
+              sh "chmod +x Build.sh" 
+              sh('./Build.sh')
+          }
+       }
+    
+       stage('push'){
+         steps{
+             script{
+                 echo "pushing the application"
+                 sh "chmod +x Deploy.sh"
+                 sh('./Deploy.sh')       
+             } 
+         } 
+                    
+       } 
+    }
+}
